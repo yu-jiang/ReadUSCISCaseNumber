@@ -20,7 +20,8 @@ for ct = 1:numCase
     caseNum = [CenterName, num2str(minNum+ct-1)];
     CaseStatus{ct} =  localreadacase(caseNum);
 end
-caseTable = table(num2str(CaseNumber(:)), CaseStatus);
+CaseNumber = num2str(CaseNumber(:));
+caseTable = table(CaseNumber, CaseStatus);
 end
 
 % Read status for specific case
