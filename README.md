@@ -5,14 +5,14 @@ Tested in MATLAB R2015b
 
 Example:
 
-```MATLAB
+```
 >> ct = readUSCISCases('SRC', 1690135896, 1690135901)
 
 
 ct = 
 
     CaseNumber              CaseStatus          
-    __________    ______________________________
+    ---------     -----------------------
 
     1690135896    'Case Was Received'           
     1690135897    'Case Was Received'           
