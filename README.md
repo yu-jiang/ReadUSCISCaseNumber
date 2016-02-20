@@ -5,7 +5,9 @@ Tested in MATLAB R2015b
 
 Example:
 
-ct = readUSCISCases('SRC', 1690135896, 1690135901)
+```MATLAB
+>> ct = readUSCISCases('SRC', 1690135896, 1690135901)
+
 
 ct = 
 
@@ -18,3 +20,4 @@ ct =
     1690135899    'Fingerprint Fee Was Received'
     1690135900    'Case Was Received'           
     1690135901    'Case Was Received'      
+```
