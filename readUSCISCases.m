@@ -1,5 +1,9 @@
-function caseTable = readMultiCases(CenterName, minNum, maxNum)
-% MATLAB Function to read the USCIS status for a specific case number
+function caseTable = readUSCISCases(CenterName, minNum, maxNum)
+% MATLAB Function read USCIS cases in a given range. Return a table of
+% resuts.
+%
+% Example 
+% >> ct = readMultiCases('SRC', 1690135876, 1690135901)
 
 % Author: Yu Jiang
 % Email:  yu.jiang@nyu.edu
@@ -14,12 +18,13 @@ CaseStatus = cell(numCase,1);
 
 for ct = 1:numCase
     caseNum = [CenterName, num2str(minNum+ct-1)];
-    CaseStatus{ct} =  readacase(caseNum);
+    CaseStatus{ct} =  localreadacase(caseNum);
 end
 caseTable = table(num2str(CaseNumber(:)), CaseStatus);
 end
 
-function status = readacase(caseNumber)
+% Read status for specific case
+function status = localreadacase(caseNumber)
 h = webread(['http://egov.uscis.gov/casestatus/mycasestatus.do?appReceiptNum=', caseNumber]);
 [si, ei] = regexp(h,'<div class="current-status-sec">.*<span class="appointment-sec-show"');
 h1 = h(si:ei);
